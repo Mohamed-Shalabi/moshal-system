@@ -1,0 +1,5 @@
+{
+    "flutter.UIPath": true,
+    "flutter.provider.hot-reload": false,
+    "flutter.autoOpenDevLog": true
+}
