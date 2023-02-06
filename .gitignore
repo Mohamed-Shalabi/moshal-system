@@ -3,4 +3,8 @@ bundle/
 pack/
 plugged/
 plugin/
+
+colors/base16/
+colors/base16**
+
 .netrwhist
