@@ -10,6 +10,8 @@ my config files for using vim as a flutter code editor
 - I use default shortcuts included in vim plugins, more configuration is comming in the future.
 - My custom shortcuts are listed below.
 - Don't forget to run PlugInstall and PluginInstall :)
+- To install coc-explorer run `:CocInstall coc-explorer`
 
 ## Customized shortcuts:
 - sl | silent | showing context menu
+- ex | silent | showing coc-explorer
