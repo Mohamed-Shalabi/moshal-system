@@ -1,0 +1,6 @@
+autoload/
+bundle/
+pack/
+plugged/
+plugin/
+.netrwhist
