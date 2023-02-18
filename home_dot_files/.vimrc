@@ -5,12 +5,14 @@ set completeopt-=preview " To stop viewing suggestion details in a buffer
 """"" enable the theme
 set clipboard=unnamedplus
 syntax enable
+
+set background=dark
 colorscheme night-owl
 
 let g:dart_style_guide = 2
 
 let g:lightline = {
-    \ 'colorscheme': 'solarized',
+    \ 'colorscheme': 'nightowl',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
 	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -66,26 +68,15 @@ let test#strategy = "vimterminal"
 
 
 
-
-
-
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'L9'
-Plugin 'vim-auto-save'
-Plugin 'yegappan/grep'
-Plugin 'myusuf3/numbers.vim'
-call vundle#end()
-filetype plugin indent on
  
 call plug#begin()
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'yegappan/grep'
+Plug 'myusuf3/numbers.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
