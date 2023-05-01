@@ -1,41 +1,46 @@
 set nowrap " To stop wrapping text
 
 set completeopt-=preview " To stop viewing suggestion details in a buffer
+set undofile
 
 """"" enable the theme
 set clipboard=unnamedplus
 syntax enable
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 set background=dark
-colorscheme night-owl
-
+colorscheme original-night-owl
 let g:dart_style_guide = 2
-
-let g:lightline = {
-    \ 'colorscheme': 'nightowl',
-	\ 'active': {
-	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-	\ },
-	\ 'component_function': {
-	\   'cocstatus': 'coc#status'
-	\ },
-	\ }
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 set tabstop=2
 set expandtab
+set hidden
+set nocompatible
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=80
+
+set number norelativenumber
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
 
-let g:lsc_auto_map = v:true
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
+let g:lsc_auto_map = {
+    \ 'defaults': v:true, 
+    \ 'FindReferences': '<leader>r',
+    \ 'NextReference': '<C-m>',
+    \ }
+
+let g:airline#extensions#tabline#enabled = 1
+
+nmap <silent>fd <Cmd>DartFmt<CR>
 nmap <silent>ex <Cmd>CocCommand explorer<CR>
+noremap <silent>se :call CocAction('diagnosticInfo')<cr>
 xmap <silent>sl  <Plug>(coc-codeaction-selected)
 nmap <silent>sl  <Plug>(coc-codeaction-selected)
 
@@ -70,17 +75,14 @@ let test#strategy = "vimterminal"
 
  
 call plug#begin()
+Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/vim-auto-save'
-Plug 'yegappan/grep'
-Plug 'myusuf3/numbers.vim'
-Plug 'haishanh/night-owl.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
-Plug 'itchyny/lightline.vim'
 Plug 'vim-test/vim-test'
 call plug#end()
  
@@ -159,11 +161,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <c-s> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+  inoremap <silent><expr> <c-s> coc#refresh()
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -283,4 +284,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-

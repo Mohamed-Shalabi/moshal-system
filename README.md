@@ -12,6 +12,7 @@ my config files for using vim as a flutter code editor
 - Don't forget to run PlugInstall and PluginInstall :)
 - To install coc-explorer run `:CocInstall coc-explorer`
 - Install coc-flutter using `:CocInstall coc-flutter`
+- Install coc-git using `:CocInstall coc-git`
 
 ## Customized shortcuts:
 - sl | silent | showing context menu
