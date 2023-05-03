@@ -1,0 +1,16 @@
+{
+    "flutter.provider.hot-reload": false,
+    "flutter.autoOpenDevLog": true,
+    "flutter.provider.enableSnippet": true,
+    "dart.analysisExcludedFolders": false,
+    "flutter.lsp.initialization.closingLabels": false,
+    "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+    "flutter.lsp.initialization.suggestFromUnimportedLibraries": true,
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.virtualTextLines": 5,
+    "diagnostic.enable": true,
+    "diagnostic.autoRefresh": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true,
+    "dart.completeFunctionCalls": true
+}
