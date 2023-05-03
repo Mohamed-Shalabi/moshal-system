@@ -1,3 +1,0 @@
-[submodule "configs/flutter-vim-configs"]
-	path = configs/flutter-vim-configs
-	url = git@github.com:Mohamed-Shalabi/flutter-vim-configs.git
